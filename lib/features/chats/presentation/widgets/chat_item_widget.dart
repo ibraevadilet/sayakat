@@ -4,7 +4,8 @@ import 'package:sayakat/widgets/spaces.dart';
 
 class ChatItemWidget extends StatelessWidget {
   const ChatItemWidget({
-    super.key, required this.text,
+    super.key,
+    required this.text,
   });
 
   final String text;
@@ -12,7 +13,7 @@ class ChatItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: getWidth(context),
+      width: context.width,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),

@@ -33,7 +33,7 @@ List<PlaseModel> placeList = [
   ),
   PlaseModel(
     image:
-        "https://asiaplustj.info/sites/default/files/articles/229776/938399b5306ab47a8ce2de682b598ff11.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/b/b6/Kuran_wa_Munjan_valley%2C_looking_to_the_south.png",
     region: "Ошская область",
     place: "Араван",
     price: 55,

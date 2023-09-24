@@ -22,7 +22,7 @@ class ProfileWidget extends StatelessWidget {
         children: [
           const SizedBox(height: 12),
           Container(
-            width: getWidth(context),
+            width: context.width,
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(18),

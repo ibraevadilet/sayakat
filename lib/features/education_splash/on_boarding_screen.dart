@@ -1,14 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sayakat/core/constants/app_text_constants.dart';
 import 'package:sayakat/core/functions/push_router_func.dart';
-import 'package:sayakat/core/images/app_images.dart';
 import 'package:sayakat/features/splash/splash_cubit/splash_cubit.dart';
 import 'package:sayakat/routes/mobile_auto_router.gr.dart';
 import 'package:sayakat/server/service_locator.dart';
 import 'package:sayakat/theme/app_colors.dart';
 import 'package:sayakat/theme/app_text_styles.dart';
-import 'package:sayakat/widgets/default_button.dart';
+import 'package:sayakat/widgets/custom_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 @RoutePage()

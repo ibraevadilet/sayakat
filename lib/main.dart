@@ -1,22 +1,17 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:sayakat/core/constants/app_text_constants.dart';
 import 'package:sayakat/routes/mobile_auto_router.dart';
 import 'package:sayakat/server/service_locator.dart';
 import 'package:sayakat/theme/app_theme.dart';
-import 'package:sayakat/widgets/app_scroll_behavior.dart';
 import 'package:sayakat/widgets/init_widget.dart';
 
 final scaffoldKey = GlobalKey<ScaffoldMessengerState>();
 final appRouter = sl<AppRouter>();
 
 void main() async {
-  await Future.wait([
-    init(),
-    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
-  ]);
+  await init();
   runApp(const Main());
 }
 
@@ -28,7 +23,6 @@ class Main extends StatelessWidget {
     return InitWidget(
       child: Builder(
         builder: (context) => MaterialApp.router(
-          scrollBehavior: AppScrollBehavior(),
           scaffoldMessengerKey: scaffoldKey,
           theme: lightTheme,
           title: AppTextConstants.appTitle,

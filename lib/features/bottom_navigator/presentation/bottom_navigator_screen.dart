@@ -5,9 +5,9 @@ import 'package:sayakat/core/blocs/bottom_navigator_cubit/bottom_navigator_cubit
 import 'package:sayakat/features/auto_mobiles/presentation/auto_mobiles_screen.dart';
 import 'package:sayakat/features/chats/presentation/chat_screen.dart';
 import 'package:sayakat/features/companies/presentation/companies_screen.dart';
-import 'package:sayakat/features/places/presentation/places_screen.dart';
+import 'package:sayakat/features/places/presentation/plases_main_screen/places_screen.dart';
 import 'package:sayakat/features/profile/presentation/profile_screen.dart';
-import 'package:sayakat/features/tours/presentation/tours_screen.dart';
+import 'package:sayakat/features/tours/presentation/tours_main_screen.dart/tours_screen.dart';
 import 'package:sayakat/theme/app_colors.dart';
 
 @RoutePage()

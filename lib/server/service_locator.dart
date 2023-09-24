@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sayakat/core/blocs/bottom_navigator_cubit/bottom_navigator_cubit.dart';
 import 'package:sayakat/features/splash/splash_cubit/splash_cubit.dart';
@@ -13,7 +14,11 @@ final sl = GetIt.instance;
 // ignore: long-method
 Future<void> init() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
+  await Future.wait([
+    EasyLocalization.ensureInitialized(),
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]),
+  ]);
+
   final sharedPreferences = await SharedPreferences.getInstance();
 
   /// Other Services
