@@ -65,6 +65,7 @@ dependencies:
   url_launcher: ^6.1.14
   dropdown_button2: ^2.3.9
   table_calendar: ^3.0.9
+  double_back_to_close_app: ^2.1.0
   
 
 dev_dependencies:

@@ -7,6 +7,7 @@ import 'package:sayakat/theme/app_text_styles.dart';
 import 'package:sayakat/widgets/custom_text_fields.dart';
 import 'package:sayakat/widgets/custom_button.dart';
 import 'package:sayakat/widgets/modal_sheet_close_container.dart';
+import 'package:sayakat/widgets/spaces.dart';
 
 Future<void> showTourFilter(BuildContext mainContext) async {
   await showModalBottomSheet(
@@ -19,7 +20,7 @@ Future<void> showTourFilter(BuildContext mainContext) async {
       child: Padding(
         padding: EdgeInsets.only(
           left: 19,
-          bottom: MediaQuery.of(context).viewInsets.bottom,
+          bottom: context.bottom,
           right: 19,
         ),
         child: Column(

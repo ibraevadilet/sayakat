@@ -1,13 +1,14 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sayakat/core/blocs/bottom_navigator_cubit/bottom_navigator_cubit.dart';
-import 'package:sayakat/features/auto_mobiles/presentation/auto_mobiles_screen.dart';
-import 'package:sayakat/features/chats/presentation/chat_screen.dart';
-import 'package:sayakat/features/companies/presentation/companies_screen.dart';
+import 'package:sayakat/features/auto_mobiles/presentation/auto_mobiles_main_screen/auto_mobiles_screen.dart';
+import 'package:sayakat/features/create_post/presentation/create_post_screen/create_post_screen.dart';
 import 'package:sayakat/features/places/presentation/plases_main_screen/places_screen.dart';
-import 'package:sayakat/features/profile/presentation/profile_screen.dart';
+import 'package:sayakat/features/profile/presentation/profile_main_screen/profile_screen.dart';
 import 'package:sayakat/features/tours/presentation/tours_main_screen.dart/tours_screen.dart';
+import 'package:sayakat/routes/mobile_auto_router.gr.dart';
 import 'package:sayakat/theme/app_colors.dart';
 
 @RoutePage()
@@ -19,7 +20,24 @@ class BottomNavigatorScreen extends StatelessWidget {
     return BlocBuilder<BottomNavigatorCubit, BottomNavigatorState>(
       builder: (context, state) {
         return Scaffold(
-          body: pages[state.index],
+          body: DoubleBackToCloseApp(
+            snackBar: const SnackBar(
+              content: Text('Нажмите еще раз, чтобы выйти'),
+              duration: Duration(seconds: 1),
+            ),
+            child: pages[state.index],
+          ),
+          floatingActionButton: FloatingActionButton(
+            backgroundColor: Colors.indigo,
+            onPressed: () {
+              context.router.push(const CreeatePostRoute());
+            },
+            child: const Icon(
+              Icons.add,
+            ),
+          ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
           bottomNavigationBar: ClipRRect(
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(14),
@@ -37,7 +55,11 @@ class BottomNavigatorScreen extends StatelessWidget {
               unselectedItemColor: AppColors.white.withOpacity(0.5),
               currentIndex: state.index,
               onTap: (index) {
-                context.read<BottomNavigatorCubit>().getCurrentPage(index);
+                if (index != 2) {
+                  context.read<BottomNavigatorCubit>().getCurrentPage(index);
+                } else {
+                  context.router.push(const CreeatePostRoute());
+                }
               },
               items: const [
                 BottomNavigationBarItem(
@@ -49,16 +71,12 @@ class BottomNavigatorScreen extends StatelessWidget {
                   label: 'Места',
                 ),
                 BottomNavigationBarItem(
+                  icon: Icon(Icons.add),
+                  label: '',
+                ),
+                BottomNavigationBarItem(
                   icon: Icon(Icons.car_rental_outlined),
                   label: 'Машины',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.chat),
-                  label: 'Чаты',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.factory),
-                  label: 'Компании',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.person),
@@ -76,8 +94,7 @@ class BottomNavigatorScreen extends StatelessWidget {
 List<Widget> pages = [
   const ToursScreen(),
   const PlacesScreen(),
+  const CreeatePostScreen(),
   const AutoMobilesScreen(),
-  const ChatScreen(),
-  const CompaniesScreen(),
   const ProfileScreen(),
 ];

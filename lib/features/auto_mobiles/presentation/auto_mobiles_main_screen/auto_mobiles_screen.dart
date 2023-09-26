@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sayakat/features/auto_mobiles/domain/car_moc_data.dart';
-import 'package:sayakat/features/auto_mobiles/presentation/widgets/car_list_view_item_widget.dart';
+import 'package:sayakat/features/auto_mobiles/presentation/auto_mobiles_main_screen/widgets/car_list_view_item_widget.dart';
+import 'package:sayakat/features/auto_mobiles/presentation/auto_mobiles_main_screen/widgets/show_plases_filter.dart';
 import 'package:sayakat/widgets/animated_scroll_view_item.dart';
 import 'package:sayakat/widgets/custom_app_bar.dart';
 
@@ -10,8 +11,15 @@ class AutoMobilesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
+      appBar: CustomAppBar(
         title: 'Автомобили в аренду',
+        actions: [
+          IconButton(
+            onPressed: () async => await showCarsFilter(context),
+            icon: const Icon(Icons.search),
+          ),
+          const SizedBox(width: 12),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 19),

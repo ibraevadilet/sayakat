@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sayakat/features/places/presentation/plases_main_screen/widgets/region_drop_down_button.dart';
+import 'package:sayakat/features/auto_mobiles/presentation/auto_mobiles_main_screen/widgets/car_type_drop_down_button.dart';
 import 'package:sayakat/theme/app_colors.dart';
 import 'package:sayakat/theme/app_text_styles.dart';
 import 'package:sayakat/widgets/custom_text_fields.dart';
@@ -7,7 +7,7 @@ import 'package:sayakat/widgets/custom_button.dart';
 import 'package:sayakat/widgets/modal_sheet_close_container.dart';
 import 'package:sayakat/widgets/spaces.dart';
 
-Future<void> showPlasesFilter(BuildContext mainContext) async {
+Future<void> showCarsFilter(BuildContext mainContext) async {
   await showModalBottomSheet(
     context: mainContext,
     isScrollControlled: true,
@@ -38,13 +38,6 @@ Future<void> showPlasesFilter(BuildContext mainContext) async {
             ),
             const SizedBox(height: 12),
             Text(
-              'Область:',
-              style: AppTextStyles.s15W400(color: AppColors.black),
-            ),
-            const SizedBox(height: 12),
-            const RegionDropDownButton(),
-            const SizedBox(height: 12),
-            Text(
               'Стоимость:',
               style: AppTextStyles.s15W400(color: AppColors.black),
             ),
@@ -66,6 +59,13 @@ Future<void> showPlasesFilter(BuildContext mainContext) async {
                 ),
               ],
             ),
+            const SizedBox(height: 12),
+            Text(
+              'Тип кузова:',
+              style: AppTextStyles.s15W400(color: AppColors.black),
+            ),
+            const SizedBox(height: 12),
+            const CarTypeDropDownButton(),
             const SizedBox(height: 12),
             const SizedBox(height: 24),
             CustomButton(

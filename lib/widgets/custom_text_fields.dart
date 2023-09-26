@@ -12,6 +12,7 @@ class CustomTextField extends StatelessWidget {
     this.obscureText = false,
     this.validator,
     this.isOutline = true,
+    this.hintText,
   });
 
   final List<TextInputFormatter>? inputFormatters;
@@ -21,6 +22,7 @@ class CustomTextField extends StatelessWidget {
   final bool obscureText;
   final String? Function(String?)? validator;
   final bool isOutline;
+  final String? hintText;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +34,7 @@ class CustomTextField extends StatelessWidget {
       validator: validator,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
+        hintText: hintText,
         labelText: labelText,
         border: isOutline
             ? InputBorders.outlineBorderColorE5E5E5Width1Radius10

@@ -34,7 +34,7 @@ class SplashCubit extends Cubit<SplashState> {
   }
 
   Future<void> toOnboardingScreen() async {
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 8));
     pushAndPopUntilFunction(const OnBoardingRoute());
   }
 }

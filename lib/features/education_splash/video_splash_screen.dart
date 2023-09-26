@@ -33,7 +33,7 @@ class _VideoSplashScreenState extends State<VideoSplashScreen> {
         create: (context) => sl<SplashCubit>()..toOnboardingScreen(),
         child: BlocBuilder<SplashCubit, SplashState>(
           builder: (context, state) {
-            return const Text('VIDEO');
+            return VideoPlayer(_controller);
           },
         ),
       ),

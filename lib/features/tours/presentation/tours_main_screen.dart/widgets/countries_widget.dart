@@ -68,7 +68,8 @@ class _CountriesWidgetState extends State<CountriesWidget> {
               children: [
                 Text('Фильтры'),
                 Icon(
-                  Icons.filter_alt_rounded,
+                  Icons.filter_alt_outlined,
+                  size: 18,
                 )
               ],
             ),

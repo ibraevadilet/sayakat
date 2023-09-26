@@ -22,5 +22,11 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: BottomNavigatorRoute.page, initial: true),
         AutoRoute(page: TourDetailRoute.page),
         AutoRoute(page: PlaseDetailRoute.page),
+        AutoRoute(page: AutoMobileDetailRoute.page),
+        AutoRoute(page: SettingsRoute.page),
+        AutoRoute(page: EditProfileRoute.page),
+        AutoRoute(page: CompaniesRoute.page),
+        AutoRoute(page: ChatRoute.page),
+        AutoRoute(page: CreeatePostRoute.page),
       ];
 }
