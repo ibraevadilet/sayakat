@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sayakat/core/formatters/shapes.dart';
 import 'package:sayakat/features/tours/presentation/tours_main_screen.dart/widgets/category_widget.dart';
 import 'package:sayakat/features/tours/presentation/tours_main_screen.dart/widgets/country_drop_down_button.dart';
 import 'package:sayakat/features/tours/presentation/tours_main_screen.dart/widgets/dates_widget.dart';
@@ -12,9 +13,7 @@ import 'package:sayakat/widgets/spaces.dart';
 Future<void> showTourFilter(BuildContext mainContext) async {
   await showModalBottomSheet(
     isScrollControlled: true,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(20),
-    ),
+    shape: AppShapes.bottomNavigatorShape(),
     context: mainContext,
     builder: (context) => SafeArea(
       child: Padding(

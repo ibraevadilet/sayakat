@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:sayakat/core/images/app_images.dart';
-import 'package:sayakat/features/auth/presentation/auth_screen/widgets/show_forgot_bottom_sheet.dart';
 import 'package:sayakat/routes/mobile_auto_router.gr.dart';
 import 'package:sayakat/theme/app_colors.dart';
 import 'package:sayakat/theme/app_text_styles.dart';
@@ -10,8 +9,8 @@ import 'package:sayakat/widgets/custom_button.dart';
 import 'package:sayakat/widgets/custom_text_fields.dart';
 
 @RoutePage()
-class AuthScreen extends StatelessWidget {
-  const AuthScreen({super.key});
+class RegistrationPersonScreen extends StatelessWidget {
+  const RegistrationPersonScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,20 +50,13 @@ class AuthScreen extends StatelessWidget {
                     hintText: 'Пароль',
                   ),
                   const SizedBox(height: 12),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      TextButton(
-                        onPressed: () async =>
-                            showForgotBottomNavigator(context),
-                        style: TextButton.styleFrom(
-                          minimumSize: Size.zero,
-                          padding: EdgeInsets.zero,
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        ),
-                        child: const Text('Забыли пароль?'),
-                      ),
-                    ],
+                  Text(
+                    'Повторить пароль',
+                    style: AppTextStyles.s15W600(),
+                  ),
+                  const SizedBox(height: 6),
+                  const CustomTextField(
+                    hintText: 'Повторите пароль',
                   ),
                   const SizedBox(height: 34),
                   CustomButton(
@@ -75,24 +67,9 @@ class AuthScreen extends StatelessWidget {
                         predicate: (route) => false,
                       );
                     },
-                    text: 'Войти',
+                    text: 'Регистрация',
                   ),
                   const SizedBox(height: 12),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'У вас нет учетной записи?',
-                        style: AppTextStyles.s15W600(),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          context.router.push(const RegistrationPersonRoute());
-                        },
-                        child: const Text('Регистрация'),
-                      ),
-                    ],
-                  ),
                 ],
               ),
             ),

@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:sayakat/core/constants/app_text_constants.dart';
+import 'package:sayakat/features/profile/domain/entity/user_entity.dart';
 import 'package:sayakat/features/profile/presentation/profile_main_screen/widgets/profile_widget.dart';
 import 'package:sayakat/routes/mobile_auto_router.gr.dart';
 import 'package:sayakat/theme/app_text_styles.dart';
 import 'package:shimmer/shimmer.dart';
-
-const avatar = 'https://cdn-icons-png.flaticon.com/512/3135/3135768.png';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -27,7 +27,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               children: [
                 const SizedBox(height: 20),
                 CachedNetworkImage(
-                  imageUrl: avatar,
+                  imageUrl: AppTextConstants.avatar,
                   placeholder: (_, url) {
                     return Container(
                       height: 100,
@@ -55,7 +55,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         shape: BoxShape.circle,
                         image: DecorationImage(
                           image: CachedNetworkImageProvider(
-                            avatar,
+                            AppTextConstants.avatar,
                           ),
                           fit: BoxFit.cover,
                         ),
@@ -77,7 +77,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ProfileWidget(
                   title: 'Редактировать профиль',
                   icon: Icons.person_2_outlined,
-                  onTap: () {},
+                  onTap: () {
+                    context.router.push(
+                      EditProfileRoute(
+                        currantUserData: UserEntity(
+                          name: 'Адилет Ибраев',
+                          email: 'ibraevadilet3@gmail.com',
+                          image: AppTextConstants.avatar,
+                        ),
+                      ),
+                    );
+                  },
                 ),
                 ProfileWidget(
                   title: 'Избранные',

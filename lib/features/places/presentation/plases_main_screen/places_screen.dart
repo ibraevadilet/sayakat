@@ -6,7 +6,8 @@ import 'package:sayakat/widgets/animated_scroll_view_item.dart';
 import 'package:sayakat/widgets/custom_app_bar.dart';
 
 class PlacesScreen extends StatelessWidget {
-  const PlacesScreen({super.key});
+  const PlacesScreen({super.key, required this.scrollController});
+  final ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +25,7 @@ class PlacesScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 19),
         child: ListView.separated(
+          controller: scrollController,
           itemCount: placeList.length,
           itemBuilder: (context, index) => AnimatedScrollViewItem(
             child: PlacesListViewItemWidget(

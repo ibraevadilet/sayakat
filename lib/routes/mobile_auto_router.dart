@@ -28,5 +28,6 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: CompaniesRoute.page),
         AutoRoute(page: ChatRoute.page),
         AutoRoute(page: CreeatePostRoute.page),
+        AutoRoute(page: RegistrationPersonRoute.page),
       ];
 }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sayakat/core/blocs/bottom_navigator_cubit/bottom_navigator_cubit.dart';
+import 'package:sayakat/features/profile/presentation/edit_profile_screen/edit_profile_cubit/edit_profile_cubit.dart';
 import 'package:sayakat/features/splash/splash_cubit/splash_cubit.dart';
 import 'package:sayakat/routes/mobile_auto_router.dart';
 import 'package:sayakat/server/dio_settings.dart';
@@ -34,4 +35,5 @@ Future<void> init() async {
 
   sl.registerFactory<SplashCubit>(() => SplashCubit(prefs: sl()));
   sl.registerFactory<BottomNavigatorCubit>(() => BottomNavigatorCubit());
+  sl.registerFactory<EditProfileCubit>(() => EditProfileCubit());
 }

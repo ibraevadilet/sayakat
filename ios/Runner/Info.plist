@@ -24,6 +24,12 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Необходимо для загрузки фотографий</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Необходимо для загрузки данных</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Необходимо для загрузки фотографий</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 	<string>sms</string>

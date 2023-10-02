@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sayakat/core/formatters/shapes.dart';
 import 'package:sayakat/features/auto_mobiles/presentation/auto_mobiles_main_screen/widgets/car_type_drop_down_button.dart';
 import 'package:sayakat/theme/app_colors.dart';
 import 'package:sayakat/theme/app_text_styles.dart';
@@ -11,9 +12,7 @@ Future<void> showCarsFilter(BuildContext mainContext) async {
   await showModalBottomSheet(
     context: mainContext,
     isScrollControlled: true,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(20),
-    ),
+    shape: AppShapes.bottomNavigatorShape(),
     builder: (context) => SafeArea(
       child: Padding(
         padding: EdgeInsets.only(

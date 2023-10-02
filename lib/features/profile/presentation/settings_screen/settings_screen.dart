@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:sayakat/features/profile/presentation/profile_main_screen/widgets/exit_dialog.dart';
 import 'package:sayakat/features/profile/presentation/profile_main_screen/widgets/profile_widget.dart';
 import 'package:sayakat/widgets/custom_app_bar.dart';
 
@@ -33,7 +34,7 @@ class SettingsScreen extends StatelessWidget {
             ProfileWidget(
               title: 'Выйти',
               icon: Icons.exit_to_app,
-              onTap: () {},
+              onTap: () => exitDialog(context),
             ),
           ],
         ),
