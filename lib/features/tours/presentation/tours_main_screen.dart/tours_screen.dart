@@ -8,13 +8,13 @@ import 'package:sayakat/theme/app_text_styles.dart';
 import 'package:sayakat/widgets/animated_scroll_view_item.dart';
 
 class ToursScreen extends StatelessWidget {
-  const ToursScreen({super.key, required this.scrollController});
-  final ScrollController scrollController;
+  const ToursScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        bottom: false,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -38,9 +38,7 @@ class ToursScreen extends StatelessWidget {
             ),
             Expanded(
               child: ListView.separated(
-                controller: scrollController,
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                padding: const EdgeInsets.fromLTRB(16, 10, 16, 100),
                 shrinkWrap: true,
                 itemCount: tourList.length,
                 itemBuilder: (context, index) => AnimatedScrollViewItem(

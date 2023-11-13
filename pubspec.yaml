@@ -66,6 +66,7 @@ dependencies:
   dropdown_button2: ^2.3.9
   table_calendar: ^3.0.9
   double_back_to_close_app: ^2.1.0
+  curved_navigation_bar: ^1.0.3
   
 
 dev_dependencies:
