@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sayakat/core/formatters/paggings.dart';
 import 'package:sayakat/features/places/domain/place_moc_data.dart';
 import 'package:sayakat/features/places/presentation/plases_main_screen/widgets/places_list_view_item_widget.dart';
 import 'package:sayakat/features/places/presentation/plases_main_screen/widgets/show_plases_filter.dart';
@@ -21,17 +22,15 @@ class PlacesScreen extends StatelessWidget {
           const SizedBox(width: 12),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 19),
-        child: ListView.separated(
-          itemCount: placeList.length,
-          itemBuilder: (context, index) => AnimatedScrollViewItem(
-            child: PlacesListViewItemWidget(
-              model: placeList[index],
-            ),
+      body: ListView.separated(
+        padding: AppPaddings.listViewPadding,
+        itemCount: placeList.length,
+        itemBuilder: (context, index) => AnimatedScrollViewItem(
+          child: PlacesListViewItemWidget(
+            model: placeList[index],
           ),
-          separatorBuilder: (context, index) => const SizedBox(height: 10),
         ),
+        separatorBuilder: (context, index) => const SizedBox(height: 10),
       ),
     );
   }

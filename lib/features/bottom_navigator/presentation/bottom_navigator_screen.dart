@@ -26,6 +26,8 @@ class BottomNavigatorScreen extends StatelessWidget {
           ),
           extendBody: true,
           bottomNavigationBar: CurvedNavigationBar(
+            animationDuration: const Duration(milliseconds: 100),
+            animationCurve: Curves.ease,
             onTap: context.read<BottomNavigatorCubit>().getCurrentPage,
             buttonBackgroundColor: AppColors.orangeff5733,
             index: state.index,

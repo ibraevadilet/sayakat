@@ -15,7 +15,7 @@ class InputBorders {
   static const OutlineInputBorder outlineBorderColorGreenWidth2Radius10 =
       OutlineInputBorder(
     borderSide: BorderSide(
-      color: Colors.green,
+      color: AppColors.colorF68080,
       width: 2,
     ),
     borderRadius: BorderRadius.all(
@@ -45,7 +45,7 @@ class InputBorders {
   static const UnderlineInputBorder unOutlineBorderColorGreenWidth2 =
       UnderlineInputBorder(
     borderSide: BorderSide(
-      color: Colors.green,
+      color: AppColors.colorF68080,
       width: 2,
     ),
   );

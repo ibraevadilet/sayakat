@@ -5,8 +5,8 @@ import 'package:sayakat/core/functions/push_router_func.dart';
 import 'package:sayakat/routes/mobile_auto_router.gr.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-part 'splash_state.dart';
 part 'splash_cubit.freezed.dart';
+part 'splash_state.dart';
 
 class SplashCubit extends Cubit<SplashState> {
   SplashCubit({required this.prefs}) : super(const SplashState.initial());
@@ -34,7 +34,7 @@ class SplashCubit extends Cubit<SplashState> {
   }
 
   Future<void> toOnboardingScreen() async {
-    await Future.delayed(const Duration(seconds: 8));
+    await Future.delayed(const Duration(seconds: 9));
     pushAndPopUntilFunction(const OnBoardingRoute());
   }
 }

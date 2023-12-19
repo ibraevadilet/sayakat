@@ -3,8 +3,8 @@ import 'package:sayakat/core/formatters/shapes.dart';
 import 'package:sayakat/features/auto_mobiles/presentation/auto_mobiles_main_screen/widgets/car_type_drop_down_button.dart';
 import 'package:sayakat/theme/app_colors.dart';
 import 'package:sayakat/theme/app_text_styles.dart';
-import 'package:sayakat/widgets/custom_text_fields.dart';
 import 'package:sayakat/widgets/custom_button.dart';
+import 'package:sayakat/widgets/custom_text_fields.dart';
 import 'package:sayakat/widgets/modal_sheet_close_container.dart';
 import 'package:sayakat/widgets/spaces.dart';
 
@@ -37,7 +37,7 @@ Future<void> showCarsFilter(BuildContext mainContext) async {
             ),
             const SizedBox(height: 12),
             Text(
-              'Стоимость:',
+              'Стоимость аренды:',
               style: AppTextStyles.s15W400(color: AppColors.black),
             ),
             const SizedBox(height: 12),

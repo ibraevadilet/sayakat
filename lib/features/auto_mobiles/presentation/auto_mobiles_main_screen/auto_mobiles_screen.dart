@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sayakat/core/formatters/paggings.dart';
 import 'package:sayakat/features/auto_mobiles/domain/car_moc_data.dart';
 import 'package:sayakat/features/auto_mobiles/presentation/auto_mobiles_main_screen/widgets/car_list_view_item_widget.dart';
 import 'package:sayakat/features/auto_mobiles/presentation/auto_mobiles_main_screen/widgets/show_plases_filter.dart';
@@ -21,17 +22,15 @@ class AutoMobilesScreen extends StatelessWidget {
           const SizedBox(width: 12),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 19),
-        child: ListView.separated(
-          itemCount: carsList.length,
-          itemBuilder: (context, index) => AnimatedScrollViewItem(
-            child: CarListViewItemWidget(
-              model: carsList[index],
-            ),
+      body: ListView.separated(
+        padding: AppPaddings.listViewPadding,
+        itemCount: carsList.length,
+        itemBuilder: (context, index) => AnimatedScrollViewItem(
+          child: CarListViewItemWidget(
+            model: carsList[index],
           ),
-          separatorBuilder: (context, index) => const SizedBox(height: 10),
         ),
+        separatorBuilder: (context, index) => const SizedBox(height: 10),
       ),
     );
   }

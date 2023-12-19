@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sayakat/core/formatters/paggings.dart';
 import 'package:sayakat/features/tours/domain/moc_data_tours.dart';
 import 'package:sayakat/features/tours/presentation/tours_main_screen.dart/widgets/category_widget.dart';
 import 'package:sayakat/features/tours/presentation/tours_main_screen.dart/widgets/countries_widget.dart';
@@ -38,7 +39,7 @@ class ToursScreen extends StatelessWidget {
             ),
             Expanded(
               child: ListView.separated(
-                padding: const EdgeInsets.fromLTRB(16, 10, 16, 100),
+                padding: AppPaddings.listViewPadding,
                 shrinkWrap: true,
                 itemCount: tourList.length,
                 itemBuilder: (context, index) => AnimatedScrollViewItem(

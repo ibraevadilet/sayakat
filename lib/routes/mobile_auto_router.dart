@@ -5,7 +5,7 @@ import 'package:sayakat/routes/mobile_auto_router.gr.dart';
 class AppRouter extends $AppRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: SplashRoute.page),
+        AutoRoute(page: SplashRoute.page, initial: true),
         CustomRoute(
           page: VideoSplashRoute.page,
           transitionsBuilder: TransitionsBuilders.noTransition,
@@ -19,7 +19,7 @@ class AppRouter extends $AppRouter {
           transitionsBuilder: TransitionsBuilders.noTransition,
         ),
         AutoRoute(page: AuthRoute.page),
-        AutoRoute(page: BottomNavigatorRoute.page, initial: true),
+        AutoRoute(page: BottomNavigatorRoute.page),
         AutoRoute(page: TourDetailRoute.page),
         AutoRoute(page: PlaseDetailRoute.page),
         AutoRoute(page: AutoMobileDetailRoute.page),

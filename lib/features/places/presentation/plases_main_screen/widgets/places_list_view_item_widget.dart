@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:sayakat/features/places/domain/place_model.dart';
+import 'package:sayakat/features/places/presentation/plases_main_screen/widgets/show_comments_sheet.dart';
 import 'package:sayakat/routes/mobile_auto_router.gr.dart';
 import 'package:sayakat/theme/app_colors.dart';
 import 'package:sayakat/theme/app_text_styles.dart';
@@ -96,9 +97,14 @@ class PlacesListViewItemWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 19),
             child: Row(
               children: [
-                Text(
-                  'Отзывы(11)',
-                  style: AppTextStyles.s16W400(),
+                InkWell(
+                  onTap: () async {
+                    await showCommentsSheet(context);
+                  },
+                  child: Text(
+                    'Отзывы(11)',
+                    style: AppTextStyles.s16W400(),
+                  ),
                 ),
                 const Spacer(),
                 const Icon(

@@ -13,21 +13,23 @@ class CustomButton extends StatelessWidget {
     this.width = double.infinity,
     this.isFullFilled = true,
     this.isLoading = false,
-    this.padding = 14.0,
+    this.contentPadding = 14.0,
+    this.aroundButtonPadding = EdgeInsets.zero,
     this.height = 56,
     this.radius = 12.0,
     this.textStyle,
     this.child,
-    this.isNotFullColor,
+    this.borderColor,
     this.textColor = Colors.white,
   }) : super(key: key);
 
   final double? width;
   final double height;
-  final double padding;
+  final double contentPadding;
+  final EdgeInsetsGeometry aroundButtonPadding;
   final Color color;
   final Color textColor;
-  final Color? isNotFullColor;
+  final Color? borderColor;
   final bool isFullFilled;
   final double radius;
   final bool isLoading;
@@ -38,32 +40,35 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoButton(
-      padding: EdgeInsets.zero,
-      onPressed: isLoading ? null : onPress,
-      child: Container(
-        alignment: Alignment.center,
-        height: height,
-        width: width,
-        padding: EdgeInsets.all(padding),
-        decoration: BoxDecoration(
-          color: isFullFilled ? color : isNotFullColor,
-          borderRadius: BorderRadius.circular(radius),
-          border: Border.all(
-            color: color,
+    return Padding(
+      padding: aroundButtonPadding,
+      child: CupertinoButton(
+        padding: EdgeInsets.zero,
+        onPressed: isLoading ? null : onPress,
+        child: Container(
+          alignment: Alignment.center,
+          height: height,
+          width: width,
+          padding: EdgeInsets.all(contentPadding),
+          decoration: BoxDecoration(
+            color:  color,
+            borderRadius: BorderRadius.circular(radius),
+            border:borderColor!=null? Border.all(
+              color: borderColor!,
+            ):null,
           ),
+          child: isLoading
+              ? const AppIndicator(color: AppColors.white)
+              : child ??
+                  Text(
+                    text!,
+                    textAlign: TextAlign.center,
+                    style: textStyle ??
+                        AppTextStyles.s17W600(
+                          color: textColor,
+                        ),
+                  ),
         ),
-        child: isLoading
-            ? const AppIndicator(color: AppColors.white)
-            : child ??
-                Text(
-                  text!,
-                  textAlign: TextAlign.center,
-                  style: textStyle ??
-                      AppTextStyles.s17W600(
-                        color: isFullFilled ? textColor : AppColors.color65C130,
-                      ),
-                ),
       ),
     );
   }
